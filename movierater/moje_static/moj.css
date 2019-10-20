@@ -1,9 +1,13 @@
 body {
-    color: red;
+    color: #444;
     padding: 50px;
 }
 
 img {
     width: 150px;
     float: left;    
+}
+
+.description {
+    margin-left: 10px;
 }
