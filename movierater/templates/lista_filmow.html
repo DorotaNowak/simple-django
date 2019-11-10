@@ -1,24 +1,24 @@
 {% extends 'glowny.html' %}
 
-{% block title %} Lista filmow {% endblock %}
+{% block title %} Film list {% endblock %}
 
 {% block body %}
     <div class="jumbotron">
         <h1 class="display-4">
           {% if user.is_authenticated %}
-                Witaj {{user.username}} !<br>
+                Welcome {{user.username}}!<br>
                 <a class ="btn btn-primary" href="{% url 'logout' %}">Logout</a>
             {% else %}
                 <a class ="btn btn-primary" href="{% url 'login' %}">Login</a>
             {% endif %}
         </h1>
         <hr class="my-4">
-        <p>Lista filmów</p>
+        <h5>Film list</h5>
     </div>
 
     <h3>{{text}}</h3>
 
-    <a href="{% url 'nowy_film'%}">Nowy film <i class="fas fa-plus"></i></a>
+    <a href="{% url 'nowy_film'%}">Add movie <i class="fas fa-plus"></i></a>
     <br>
         {% for film in filmy %}
         <div class="card" style="width: 700px">

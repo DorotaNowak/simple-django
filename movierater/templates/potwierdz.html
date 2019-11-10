@@ -1,15 +1,15 @@
 {% extends 'glowny.html' %}
 
-{% block title %} Potwierdz {% endblock %}
+{% block title %} Confirm {% endblock %}
 
 {% block body %}
 <div class="alert alert-danger" role="alert">
-    Czy na pewno chcesz usunec {{film.name}} ?
+    Are you sure you want to delete {{film.name}} ?
 </div>
 
 <form method="post">
     {% csrf_token %}
-    <a href="{% url 'wszystkie_filmy' %}">Cofnij</a>
-    <button type="submit" class="btn btn-danger">Tak</button>
+    <a href="{% url 'wszystkie_filmy' %}">No</a>
+    <button type="submit" class="btn btn-danger">Yes</button>
 </form>
 {% endblock %}
